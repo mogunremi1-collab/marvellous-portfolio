@@ -9,11 +9,13 @@
     gtag('js', new Date());
     gtag('config', 'G-3HTC7LQ8Z9');
   </script>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Ogunremi Marvellous Portfolio</title>
   <meta name="robots" content="noindex, nofollow">
   <meta content="Ogunremi Marvellous Portfolio" name="description">
+
   <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="icon">
   <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="apple-touch-icon">
 
@@ -23,79 +25,118 @@
   <link href="css/swiper-bundle.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
+  <!-- Custom Dark Theme with Red Accent -->
   <style>
     :root {
       --primary-red: #c1121f;
       --dark-bg: #0a0a0a;
       --card-bg: #1a1a1a;
+      --text-light: #ffffff;
     }
-    
+
     body {
       background-color: var(--dark-bg);
-      color: #ffffff;
+      color: var(--text-light);
     }
-    
+
+    /* Hero */
     .hero {
-      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), ur[](https://i.ibb.co/GnkqPCC/brown-egg.jpg) !important;
+      background-image: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), 
+                        ur[](https://i.ibb.co/GnkqPCC/brown-egg.jpg) !important;
+      background-size: cover;
+      background-position: center;
     }
-    
-    .logo a, .nav-link, .title-a, .title-s, .s-title, .w-title {
+
+    /* Navigation Fixes */
+    .navbar ul {
+      background: rgba(10,10,10,0.95);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    .nav-link {
       color: #ffffff !important;
+      font-weight: 500;
+      transition: all 0.3s;
     }
-    
-    .nav-link.active, .nav-link:hover {
+
+    .nav-link:hover,
+    .nav-link.active {
       color: var(--primary-red) !important;
+    }
+
+    .logo a {
+      color: var(--text-light) !important;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    /* Red underline for active link */
+    .nav-link.active:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--primary-red);
+    }
+
+    /* Cards & Sections */
+    .box-shadow-full, .service-box, .work-box {
+      background-color: var(--card-bg) !important;
+      border: 1px solid #333;
+      transition: transform 0.3s;
+    }
+
+    .box-shadow-full:hover, .service-box:hover, .work-box:hover {
+      transform: translateY(-5px);
     }
 
     .progress-bar {
       background-color: var(--primary-red) !important;
     }
-    
-    .service-box, .box-shadow-full, .work-box {
-      background-color: var(--card-bg) !important;
-      border: 1px solid #333;
+
+    .title-a, .title-left, .s-title, .w-title {
+      color: var(--text-light) !important;
     }
-    
-    .section-counter {
-      background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), ur[](https://i.ibb.co/cDmk7V0/counters-bg.jpg) !important;
-    }
-    
-    .btn, .back-to-top {
-      background-color: var(--primary-red);
-      border-color: var(--primary-red);
-    }
-    
-    .btn:hover, .back-to-top:hover {
-      background-color: #900c14;
-    }
-    
+
     a {
       color: var(--primary-red);
     }
-    
+
     .overlay-itro, .overlay-mf {
-      background: rgba(10,10,10,0.85);
+      background: rgba(10,10,10,0.92);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0a0a0a;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
       <h1 class="logo"><a href="index.html">Marvellous</a></h1>
+      
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#work">Work</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">HOME</a></li>
+          <li><a class="nav-link scrollto" href="#about">ABOUT</a></li>
+          <li><a class="nav-link scrollto" href="#services">SERVICES</a></li>
+          <li><a class="nav-link scrollto" href="#work">WORK</a></li>
+          <li><a class="nav-link scrollto" href="#contact">CONTACT</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
     </div>
   </header>
 
-  <!-- ======= Hero Section ======= -->
+  <!-- Hero Section -->
   <div id="hero" class="hero route bg-image">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
@@ -111,7 +152,7 @@
   </div>
 
   <main id="main">
-    <!-- ======= About Section ======= -->
+    <!-- About Section (Already updated from before) -->
     <section id="about" class="about-mf sect-pt4 route">
       <div class="container">
         <div class="row">
@@ -138,12 +179,16 @@
                     <p class="title-s">Skills</p>
                     <span>HTML5 & CSS3:</span> <span class="pull-right">95%</span>
                     <div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%;"></div></div>
+                    
                     <span>JavaScript:</span> <span class="pull-right">90%</span>
                     <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%;"></div></div>
+                    
                     <span>React.js:</span> <span class="pull-right">85%</span>
                     <div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%;"></div></div>
-                    <span>Backend (Node.js/Python):</span> <span class="pull-right">80%</span>
+                    
+                    <span>Backend Development:</span> <span class="pull-right">80%</span>
                     <div class="progress"><div class="progress-bar" role="progressbar" style="width: 80%;"></div></div>
+                    
                     <span>Data Analysis:</span> <span class="pull-right">75%</span>
                     <div class="progress"><div class="progress-bar" role="progressbar" style="width: 75%;"></div></div>
                   </div>
@@ -175,11 +220,9 @@
       </div>
     </section>
 
-    <!-- Services, Portfolio, Contact sections remain for now -->
-    <!-- You can tell me if you want to update or remove any of them next -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: ur[](https://i.ibb.co/qYLB5Z2/overlay-bg.jpg)">
+    <!-- Contact Section -->
+    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" 
+             style="background-image: ur[](https://i.ibb.co/qYLB5Z2/overlay-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
         <div class="row">
@@ -193,16 +236,16 @@
                     </div>
                     <div class="more-info">
                       <p class="lead">
-                        Have a project in mind or any questions? Feel free to reach out. I'm always open to discussing new opportunities.
+                        Have a project in mind or any questions? Feel free to reach out. 
+                        I'm always open to discussing new opportunities.
                       </p>
                       <ul class="list-ico">
-                        <li><span class="bi bi-envelope"></span> <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></li>
-                        <li><span class="bi bi-telephone"></span> <a href="tel:08107436260">08107436260</a></li>
-                      </ul>
-                    </div>
-                    <div class="socials">
-                      <ul>
-                        <!-- Add your LinkedIn, Twitter, etc. here later -->
+                        <li><span class="bi bi-envelope"></span> 
+                          <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a>
+                        </li>
+                        <li><span class="bi bi-telephone"></span> 
+                          <a href="tel:08107436260">08107436260</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -229,249 +272,11 @@
   </footer>
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
-  <!-- Vendor JS Files -->
-  <script src="js/purecounter_vanilla.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/glightbox.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/typed.umd.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HTC7LQ8Z9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3HTC7LQ8Z9');
-  </script>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Ogunremi Marvellous Portfolio</title>
-  <meta name="robots" content="noindex, nofollow">
-  <meta content="Ogunremi Marvellous Portfolio" name="description">
-  <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="icon">
-  <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="apple-touch-icon">
-
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-icons.css" rel="stylesheet">
-  <link href="css/glightbox.min.css" rel="stylesheet">
-  <link href="css/swiper-bundle.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary-red: #c1121f;
-      --dark-bg: #0a0a0a;
-      --card-bg: #1a1a1a;
-    }
-    
-    body {
-      background-color: var(--dark-bg);
-      color: #ffffff;
-    }
-    
-    .hero {
-      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), ur[](https://i.ibb.co/GnkqPCC/brown-egg.jpg) !important;
-    }
-    
-    .logo a, .nav-link, .title-a, .title-s, .s-title, .w-title {
-      color: #ffffff !important;
-    }
-    
-    .nav-link.active, .nav-link:hover {
-      color: var(--primary-red) !important;
-    }
-    
-    .progress-bar {
-      background-color: var(--primary-red) !important;
-    }
-    
-    .service-box, .box-shadow-full, .work-box {
-      background-color: var(--card-bg) !important;
-      border: 1px solid #333;
-    }
-    
-    .section-counter {
-      background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), ur[](https://i.ibb.co/cDmk7V0/counters-bg.jpg) !important;
-    }
-    
-    .btn, .back-to-top {
-      background-color: var(--primary-red);
-      border-color: var(--primary-red);
-    }
-    
-    .btn:hover, .back-to-top:hover {
-      background-color: #900c14;
-    }
-    
-    a {
-      color: var(--primary-red);
-    }
-    
-    .overlay-itro, .overlay-mf {
-      background: rgba(10,10,10,0.85);
-    }
-  </style>
-</head>
-<body>
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.html">Marvellous</a></h1>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#work">Work</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image">
-    <div class="overlay-itro"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <h1 class="hero-title mb-4">I am Ogunremi Marvellous</h1>
-          <p class="hero-subtitle">
-            <span class="typed" data-typed-items="Full Stack Developer, Web Designer, Data Analyst"></span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <main id="main">
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="https://i.ibb.co/gmSFsRW/L.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Ogunremi Marvellous</span></p>
-                        <p><span class="title-s">Profile: </span> <span>Full Stack Developer, Web Designer & Data Analyst</span></p>
-                        <p><span class="title-s">Email: </span> <span><a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></span></p>
-                        <p><span class="title-s">Phone: </span> <span><a href="tel:08107436260">08107436260</a></span></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skills</p>
-                    <span>HTML5 & CSS3:</span> <span class="pull-right">95%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%;"></div></div>
-                    <span>JavaScript:</span> <span class="pull-right">90%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%;"></div></div>
-                    <span>React.js:</span> <span class="pull-right">85%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%;"></div></div>
-                    <span>Backend (Node.js/Python):</span> <span class="pull-right">80%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 80%;"></div></div>
-                    <span>Data Analysis:</span> <span class="pull-right">75%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 75%;"></div></div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
-                    <div class="title-box-2">
-                      <h5 class="title-left">About Me</h5>
-                    </div>
-                    <p class="lead">
-                      I am Ogunremi Marvellous, a passionate Full Stack Developer, Web Designer, and Data Analyst 
-                      with a strong drive for building beautiful, functional, and data-driven digital solutions.
-                    </p>
-                    <p class="lead">
-                      I specialize in developing modern, responsive websites and robust web applications using the latest 
-                      technologies. From clean user interfaces to powerful backend systems and insightful data analysis, 
-                      I bring ideas to life with both creativity and technical precision.
-                    </p>
-                    <p class="lead">
-                      Whether it's designing pixel-perfect interfaces, developing full-featured applications, or turning 
-                      raw data into meaningful insights, I am committed to delivering high-quality results that exceed expectations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services, Portfolio, Contact sections remain for now -->
-    <!-- You can tell me if you want to update or remove any of them next -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: ur[](https://i.ibb.co/qYLB5Z2/overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-mf">
-              <div class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">Get in Touch</h5>
-                    </div>
-                    <div class="more-info">
-                      <p class="lead">
-                        Have a project in mind or any questions? Feel free to reach out. I'm always open to discussing new opportunities.
-                      </p>
-                      <ul class="list-ico">
-                        <li><span class="bi bi-envelope"></span> <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></li>
-                        <li><span class="bi bi-telephone"></span> <a href="tel:08107436260">08107436260</a></li>
-                      </ul>
-                    </div>
-                    <div class="socials">
-                      <ul>
-                        <!-- Add your LinkedIn, Twitter, etc. here later -->
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            <p class="copyright">© Copyright <strong>Ogunremi Marvellous</strong>. All Rights Reserved</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
+  <!-- JS Files -->
   <script src="js/purecounter_vanilla.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/glightbox.min.js"></script>
