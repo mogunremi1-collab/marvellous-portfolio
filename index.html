@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HTC7LQ8Z9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,7 +16,6 @@
   <meta content="MG NEXUS - Full Stack Developer, Web Designer & Data Analyst" name="description">
 
   <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="icon">
-  <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="apple-touch-icon">
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/bootstrap-icons.css" rel="stylesheet">
@@ -25,29 +23,27 @@
   <link href="css/swiper-bundle.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- Custom Dark Theme + Big Logo Background -->
   <style>
     :root {
-      --primary-red: #c1121f;
-      --dark-bg: #0a0a0a;
-      --card-bg: #1a1a1a;
+      --primary-color: #0d47a1;     /* Nice blue for white theme */
+      --text-dark: #1a1a1a;
+      --light-bg: #f8f9fa;
     }
 
     body {
-      background-color: var(--dark-bg);
-      color: #ffffff;
+      background-color: #ffffff;
+      color: var(--text-dark);
     }
 
-    /* Hero with your new MG NEXUS logo as big background */
+    /* Hero with your MG NEXUS logo as background */
     #hero {
       height: 100vh;
       min-height: 650px;
       background-image: 
-        linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.78)), 
+        linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)), 
         url('https://i.ibb.co/dJg5Tg5n/KYz-T9.jpg') !important;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
       display: flex;
       align-items: center;
     }
@@ -56,22 +52,27 @@
       width: 100%;
     }
 
-    /* Navigation */
+    /* Header */
+    header {
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
     .navbar ul {
-      background: rgba(10,10,10,0.95);
+      background: white;
       padding: 10px 25px;
       border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .nav-link {
-      color: #ffffff !important;
+      color: var(--text-dark) !important;
       font-weight: 500;
-      padding: 8px 18px;
     }
 
     .nav-link:hover,
     .nav-link.active {
-      color: var(--primary-red) !important;
+      color: var(--primary-color) !important;
     }
 
     .nav-link.active:after {
@@ -82,7 +83,7 @@
       transform: translateX(-50%);
       width: 60%;
       height: 3px;
-      background: var(--primary-red);
+      background: var(--primary-color);
     }
 
     .logo img {
@@ -91,40 +92,45 @@
     }
 
     .hero-title {
-      font-size: 3.5rem;
+      font-size: 3.4rem;
       font-weight: 700;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.9);
-      margin-bottom: 1rem;
+      color: #1a1a1a;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .hero-subtitle {
-      font-size: 1.7rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.65rem;
+      color: #333;
     }
 
     .lead {
+      color: #444;
       font-size: 1.25rem;
-      color: #ddd;
     }
 
-    .box-shadow-full, .work-box {
-      background-color: var(--card-bg) !important;
-      border: 1px solid #333;
+    .box-shadow-full {
+      background-color: #ffffff;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border: 1px solid #eee;
     }
 
     .progress-bar {
-      background-color: var(--primary-red) !important;
+      background-color: var(--primary-color) !important;
     }
 
-    .section-counter {
-      background-image: linear-gradient(rgba(10,10,10,0.92), rgba(10,10,10,0.92)), 
-                        ur[](https://i.ibb.co/cDmk7V0/counters-bg.jpg) !important;
+    .title-a, .title-left {
+      color: var(--text-dark) !important;
+    }
+
+    footer {
+      background-color: #f8f9fa;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <!-- ======= Header ======= -->
+  <!-- Header -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
       <div class="logo">
@@ -146,7 +152,7 @@
     </div>
   </header>
 
-  <!-- ======= Hero Section - Big MG NEXUS Logo Background ======= -->
+  <!-- Hero Section -->
   <section id="hero">
     <div class="hero-content">
       <div class="container text-center">
@@ -163,7 +169,7 @@
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
+    <!-- About Section -->
     <section id="about" class="about-mf sect-pt4 route">
       <div class="container">
         <div class="row">
@@ -179,29 +185,25 @@
                     </div>
                     <div class="col-sm-6 col-md-7">
                       <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Ogunremi Marvellous</span></p>
-                        <p><span class="title-s">Profile: </span> <span>Full Stack Developer, Web Designer & Data Analyst</span></p>
-                        <p><span class="title-s">Email: </span> <span><a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></span></p>
-                        <p><span class="title-s">Phone: </span> <span><a href="tel:08107436260">08107436260</a></span></p>
+                        <p><span class="title-s">Name: </span> Ogunremi Marvellous</p>
+                        <p><span class="title-s">Profile: </span> Full Stack Developer, Web Designer & Data Analyst</p>
+                        <p><span class="title-s">Email: </span> <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></p>
+                        <p><span class="title-s">Phone: </span> <a href="tel:08107436260">08107436260</a></p>
                       </div>
                     </div>
                   </div>
                   <div class="skill-mf">
                     <p class="title-s">Skills</p>
                     <span>HTML5 & CSS3:</span> <span class="pull-right">95%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%;"></div></div>
-                    
+                    <div class="progress"><div class="progress-bar" style="width: 95%;"></div></div>
                     <span>JavaScript:</span> <span class="pull-right">90%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%;"></div></div>
-                    
+                    <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
                     <span>React.js:</span> <span class="pull-right">85%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%;"></div></div>
-                    
+                    <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
                     <span>Backend Development:</span> <span class="pull-right">80%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 80%;"></div></div>
-                    
+                    <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
                     <span>Data Analysis:</span> <span class="pull-right">75%</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 75%;"></div></div>
+                    <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -214,9 +216,7 @@
                       with a strong drive for building beautiful, functional, and data-driven digital solutions.
                     </p>
                     <p class="lead">
-                      I specialize in developing modern, responsive websites and robust web applications using the latest 
-                      technologies. From clean user interfaces to powerful backend systems and insightful data analysis, 
-                      I bring ideas to life with both creativity and technical precision.
+                      I specialize in developing modern, responsive websites and robust web applications using the latest technologies.
                     </p>
                   </div>
                 </div>
@@ -227,35 +227,35 @@
       </div>
     </section>
 
-    <!-- ======= Counter Section ======= -->
+    <!-- Counter Section -->
     <div class="section-counter paralax-mf bg-image" 
-         style="background-image: linear-gradient(rgba(10,10,10,0.92), rgba(10,10,10,0.92)), ur[](https://i.ibb.co/cDmk7V0/counters-bg.jpg)">
+         style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), ur[](https://i.ibb.co/cDmk7V0/counters-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container position-relative">
         <div class="row text-center">
-          <div class="col-sm-4 col-lg-4">
-            <div class="counter-box pt-4 pt-md-0">
+          <div class="col-sm-4">
+            <div class="counter-box pt-4">
               <div class="counter-ico"><span class="ico-circle"><i class="bi bi-check"></i></span></div>
               <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="2" class="counter purecounter"></p>
+                <p data-purecounter-start="0" data-purecounter-end="25" class="counter purecounter"></p>
                 <span class="counter-text">WORKS COMPLETED</span>
               </div>
             </div>
           </div>
-          <div class="col-sm-4 col-lg-4">
-            <div class="counter-box pt-4 pt-md-0">
+          <div class="col-sm-4">
+            <div class="counter-box pt-4">
               <div class="counter-ico"><span class="ico-circle"><i class="bi bi-journal-richtext"></i></span></div>
               <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="2" class="counter purecounter"></p>
+                <p data-purecounter-start="0" data-purecounter-end="2" class="counter purecounter"></p>
                 <span class="counter-text">YEARS OF EXPERIENCE</span>
               </div>
             </div>
           </div>
-          <div class="col-sm-4 col-lg-4">
-            <div class="counter-box pt-4 pt-md-0">
+          <div class="col-sm-4">
+            <div class="counter-box pt-4">
               <div class="counter-ico"><span class="ico-circle"><i class="bi bi-people"></i></span></div>
               <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="2" class="counter purecounter"></p>
+                <p data-purecounter-start="0" data-purecounter-end="15" class="counter purecounter"></p>
                 <span class="counter-text">TOTAL CLIENTS</span>
               </div>
             </div>
@@ -264,7 +264,7 @@
       </div>
     </div>
 
-    <!-- ======= Portfolio Section ======= -->
+    <!-- Portfolio Section -->
     <section id="work" class="portfolio-mf sect-pt4 route">
       <div class="container">
         <div class="row">
@@ -278,13 +278,13 @@
         </div>
         <div class="row">
           <div class="col-12 text-center py-5">
-            <p class="lead text-muted">New projects coming soon...</p>
+            <p class="lead">New projects coming soon...</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= Contact Section ======= -->
+    <!-- Contact Section -->
     <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" 
              style="background-image: ur[](https://i.ibb.co/qYLB5Z2/overlay-bg.jpg)">
       <div class="overlay-mf"></div>
@@ -300,8 +300,7 @@
                     </div>
                     <div class="more-info">
                       <p class="lead">
-                        Have a project in mind or any questions? Feel free to reach out. 
-                        I'm always open to discussing new opportunities.
+                        Have a project in mind or any questions? Feel free to reach out.
                       </p>
                       <ul class="list-ico">
                         <li><span class="bi bi-envelope"></span> 
@@ -323,14 +322,11 @@
 
   </main>
 
-  <!-- ======= Footer ======= -->
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            <p class="copyright">© Copyright <strong>MG NEXUS</strong>. All Rights Reserved</p>
-          </div>
+        <div class="col-sm-12 text-center">
+          <p class="copyright">© Copyright <strong>MG NEXUS</strong>. All Rights Reserved</p>
         </div>
       </div>
     </div>
@@ -341,7 +337,6 @@
     <i class="bi bi-arrow-up-short"></i>
   </a>
 
-  <!-- Vendor JS Files -->
   <script src="js/purecounter_vanilla.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/glightbox.min.js"></script>
