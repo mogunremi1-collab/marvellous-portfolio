@@ -25,7 +25,7 @@
   <link href="css/swiper-bundle.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- Custom Dark Theme with Red Accent -->
+  <!-- Custom Dark Theme (Red + Black) -->
   <style>
     :root {
       --primary-red: #c1121f;
@@ -39,15 +39,12 @@
       color: var(--text-light);
     }
 
-    /* Hero */
     .hero {
       background-image: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.9)), 
                         ur[](https://i.ibb.co/GnkqPCC/brown-egg.jpg) !important;
-      background-size: cover;
-      background-position: center;
     }
 
-    /* Navigation Fixes */
+    /* Navigation */
     .navbar ul {
       background: rgba(10,10,10,0.95);
       padding: 10px 20px;
@@ -57,7 +54,6 @@
     .nav-link {
       color: #ffffff !important;
       font-weight: 500;
-      transition: all 0.3s;
     }
 
     .nav-link:hover,
@@ -65,13 +61,6 @@
       color: var(--primary-red) !important;
     }
 
-    .logo a {
-      color: var(--text-light) !important;
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-
-    /* Red underline for active link */
     .nav-link.active:after {
       content: '';
       position: absolute;
@@ -82,23 +71,29 @@
       background: var(--primary-red);
     }
 
+    .logo a {
+      color: var(--text-light) !important;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
     /* Cards & Sections */
     .box-shadow-full, .service-box, .work-box {
       background-color: var(--card-bg) !important;
       border: 1px solid #333;
-      transition: transform 0.3s;
-    }
-
-    .box-shadow-full:hover, .service-box:hover, .work-box:hover {
-      transform: translateY(-5px);
     }
 
     .progress-bar {
       background-color: var(--primary-red) !important;
     }
 
-    .title-a, .title-left, .s-title, .w-title {
+    .title-a, .title-left, .s-title, .w-title, .counter-text {
       color: var(--text-light) !important;
+    }
+
+    .section-counter {
+      background-image: linear-gradient(rgba(10,10,10,0.92), rgba(10,10,10,0.92)), 
+                        ur[](https://i.ibb.co/cDmk7V0/counters-bg.jpg) !important;
     }
 
     a {
@@ -109,7 +104,6 @@
       background: rgba(10,10,10,0.92);
     }
 
-    /* Footer */
     footer {
       background-color: #0a0a0a;
       color: #aaa;
@@ -118,11 +112,10 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
       <h1 class="logo"><a href="index.html">Marvellous</a></h1>
-      
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">HOME</a></li>
@@ -136,7 +129,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- ======= Hero Section ======= -->
   <div id="hero" class="hero route bg-image">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
@@ -152,7 +145,8 @@
   </div>
 
   <main id="main">
-    <!-- About Section (Already updated from before) -->
+
+    <!-- ======= About Section ======= -->
     <section id="about" class="about-mf sect-pt4 route">
       <div class="container">
         <div class="row">
@@ -220,7 +214,287 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ======= Counter Section ======= -->
+    <div class="section-counter paralax-mf bg-image" 
+         style="background-image: linear-gradient(rgba(10,10,10,0.92), rgba(10,10,10,0.92)), ur[](https://i.ibb.co/cDmk7V0/counters-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container position-relative">
+        <div class="row text-center">
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="70" data-purecounter-duration="2" class="counter purecounter"></p>
+                <span class="counter-text">WORKS COMPLETED</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="2" class="counter purecounter"></p>
+                <span class="counter-text">YEARS OF EXPERIENCE</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-people"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="2" class="counter purecounter"></p>
+                <span class="counter-text">TOTAL CLIENTS</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-repeat"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="2" class="counter purecounter"></p>
+                <span class="counter-text">REPEAT CLIENTS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">Portfolio</h3>
+              <p class="subtitle-a">Here are some of the designs and websites I have built</p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://clonenetflixlanding.netlify.app/" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/M5472Nc/Screenshot-2023-08-16-165422.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Netflix Clone</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">12 Oct. 2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://biscollary-enterprises.netlify.com/" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/7pR3Y9D/Biscollary-enterprises.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Biscollary Enterprises</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">05 Dec. 2022</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://biscollary-herbs.netlify.com/" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/WkLtXkn/biscollary-herbs.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Biscollary Herbs</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">05 Jan. 2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://dynamic-blog-project.netlify.com/" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/wzG7rzF/bloghome.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Blog Website</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">02 Aug. 2020</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://the-eccomerce-website.netlify.app/home" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/KX96SYX/image.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Ecommerce Website</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">05 Jan. 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://work-for-cash.netlify.app/" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/dJWhsCLC/Screenshot-2025-06-20-105050.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Work-For-Cash</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">03 Mar. 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://noteblog.netlify.app" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/qMk7FWKD/Screenshot-2025-06-20-105145.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Note-Blog</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">31 Dec. 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://just-a-tesla-clone.netlify.app/" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/ZRvPMJhh/image.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Tesla Clone</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">10 Dec. 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://defenders-of-the-pack.netlify.app/" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/MmHgQ3x/image.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Dogpack Website</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">13 Jun. 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://otterlycoz.netlify.app/" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/21Xq84q1/image.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">Otterly Cozy</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">29 Apr. 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="https://blessedtees.netlify.app/" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img"><img src="https://i.ibb.co/b5tJn5n1/image.png" alt="" class="img-fluid"></div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8"><h2 class="w-title">BlessedTees</h2></div>
+                  <div class="col-sm-4 text-end">
+                    <div class="w-like"><a href="#"><span class="bi bi-plus-circle"></span></a></div>
+                  </div>
+                </div>
+                <div class="w-more">
+                  <span class="w-ctegory">Web Design</span> / <span class="w-date">13 Sep. 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
     <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" 
              style="background-image: ur[](https://i.ibb.co/qYLB5Z2/overlay-bg.jpg)">
       <div class="overlay-mf"></div>
@@ -256,9 +530,10 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
+  <!-- ======= Footer ======= -->
   <footer>
     <div class="container">
       <div class="row">
@@ -276,7 +551,7 @@
     <i class="bi bi-arrow-up-short"></i>
   </a>
 
-  <!-- JS Files -->
+  <!-- Vendor JS Files -->
   <script src="js/purecounter_vanilla.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/glightbox.min.js"></script>
