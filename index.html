@@ -25,43 +25,75 @@
 
   <style>
     :root {
-      --primary-color: #dc2626;       /* Bold Red */
-      --primary-dark: #b91c1c;        /* Dark Red */
-      --bg-dark: #0a0a0a;             /* Main Background */
-      --bg-card: #111111;             /* Card/Box Background */
+      --primary-color: #dc2626;
+      --primary-dark: #b91c1c;
+      --bg-dark: #0a0a0a;
+      --bg-card: #111111;
       --bg-header: rgba(10,10,10,0.95);
-      --text-primary: #ffffff;        /* White Text */
-      --text-secondary: #a1a1aa;      /* Muted Gray */
-      --border-color: #27272a;        /* Dark Borders */
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --border-color: #27272a;
       --accent-glow: rgba(220,38,38,0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       background-color: var(--bg-dark);
       color: var(--text-primary);
-      font-family: 'Poppins', system-ui, sans-serif;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* ===== HEADER & NAV ===== */
+    /* ===== HEADER ===== */
     header {
       background: var(--bg-header);
       border-bottom: 1px solid var(--border-color);
       backdrop-filter: blur(8px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 15px 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--primary-color);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      gap: 30px;
     }
 
     .navbar ul {
-      background: var(--bg-card);
-      padding: 10px 25px;
-      border-radius: 50px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-link {
       color: var(--text-secondary) !important;
-      font-weight: 600;
-      position: relative;
+      font-weight: 500;
+      text-decoration: none;
       transition: color 0.3s ease;
+      font-size: 0.95rem;
     }
 
     .nav-link:hover,
@@ -69,36 +101,25 @@
       color: var(--primary-color) !important;
     }
 
-    .nav-link.active:after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60%;
-      height: 3px;
-      background: var(--primary-color);
-      border-radius: 2px;
-    }
-
-    .logo img {
-      height: 58px;
-      width: auto;
-      border: 2px solid var(--border-color);
-      border-radius: 8px;
-      padding: 3px;
-      background: var(--bg-card);
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     /* ===== HERO SECTION ===== */
     #hero {
-      height: 100vh;
-      min-height: 650px;
-      background: radial-gradient(circle at 50% 40%, #151515 0%, var(--bg-dark) 75%);
+      min-height: 100vh;
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      background: radial-gradient(circle at 50% 40%, #151515 0%, var(--bg-dark) 75%);
       position: relative;
-      overflow: hidden;
     }
 
     #hero::before {
@@ -109,39 +130,146 @@
       pointer-events: none;
     }
 
-    .hero-content { width: 100%; position: relative; z-index: 2; }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
     .hero-title {
-      font-size: 3.4rem;
-      font-weight: 800;
+      font-size: 3rem;
+      font-weight: 700;
       color: var(--text-primary);
-      text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      margin-bottom: 10px;
       letter-spacing: -0.5px;
     }
 
     .hero-subtitle {
-      font-size: 1.65rem;
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .typed {
       color: var(--primary-color);
       font-weight: 600;
     }
 
     .lead {
       color: var(--text-secondary);
-      font-size: 1.25rem;
-      font-weight: 400;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    /* ===== CONTENT BOXES ===== */
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 80px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-mf {
+      background: var(--bg-dark);
+    }
+
     .box-shadow-full {
       background-color: var(--bg-card);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
       border: 1px solid var(--border-color);
       border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 30px;
+    }
+
+    .about-info {
+      margin-bottom: 30px;
+    }
+
+    .about-info p {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .about-info p:last-child {
+      border-bottom: none;
+    }
+
+    .title-s {
+      color: var(--primary-color);
+      font-weight: 600;
+      display: inline-block;
+      min-width: 80px;
+    }
+
+    .about-info a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .about-info a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Skills */
+    .skill-mf {
+      margin-top: 30px;
+    }
+
+    .skill-mf .title-s {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      display: block;
+    }
+
+    .skill-mf > span {
+      display: block;
+      color: var(--text-primary);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .skill-mf .pull-right {
+      color: var(--primary-color);
+      font-weight: 600;
+      float: right;
+    }
+
+    .progress {
+      background-color: #27272a;
+      border-radius: 4px;
+      height: 6px;
+      margin-bottom: 20px;
       overflow: hidden;
     }
 
-    .title-a, .title-left {
-      color: var(--text-primary) !important;
+    .progress-bar {
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-dark)) !important;
+      border-radius: 4px;
+      height: 100%;
+      transition: width 0.6s ease;
+    }
+
+    /* About Me Text */
+    .about-me {
+      margin-top: 40px;
+    }
+
+    .title-box-2 {
+      margin-bottom: 25px;
+    }
+
+    .title-left {
+      color: var(--text-primary);
+      font-size: 1.5rem;
       font-weight: 700;
       position: relative;
       padding-bottom: 10px;
@@ -150,197 +278,452 @@
     .title-left::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0;
-      width: 50px; height: 3px;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
       background: var(--primary-color);
+    }
+
+    .about-me .lead {
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services-mf {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .title-box {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .title-a {
+      color: var(--text-primary);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .subtitle-a {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .line-mf {
+      width: 70px;
+      height: 4px;
+      background: var(--primary-color);
+      margin: 20px auto;
       border-radius: 2px;
     }
 
-    /* ===== SKILLS & PROGRESS ===== */
-    .skill-mf .title-s { color: var(--text-primary); font-weight: 600; margin-bottom: 15px; }
-    .skill-mf span:not(.pull-right) { color: var(--text-primary); font-weight: 500; }
-
-    .progress {
-      background-color: #27272a;
-      border-radius: 6px;
-      height: 8px;
+    .service-box {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 30px;
       margin-bottom: 20px;
+      transition: all 0.3s ease;
+      height: 100%;
     }
 
-    .progress-bar {
-      background: linear-gradient(90deg, var(--primary-color), var(--primary-dark)) !important;
-      border-radius: 6px;
+    .service-box:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(220,38,38,0.1);
+    }
+
+    .service-ico {
+      width: 60px;
+      height: 60px;
+      background: var(--bg-card);
+      border: 2px solid var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+
+    .service-box .title-s {
+      color: var(--text-primary);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .service-box p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0;
     }
 
     /* ===== COUNTER SECTION ===== */
     .section-counter {
       background: var(--bg-card);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
       padding: 60px 0;
     }
 
+    .counter-box {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .counter-ico {
+      margin-bottom: 15px;
+    }
+
+    .ico-circle {
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
     .counter-num .counter {
-      font-size: 2.8rem;
-      font-weight: 800;
+      font-size: 2.5rem;
+      font-weight: 700;
       color: var(--primary-color);
       line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
 
     .counter-text {
       color: var(--text-secondary);
-      font-weight: 500;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-size: 0.85rem;
-    }
-
-    .ico-circle {
-      width: 70px; height: 70px;
-      border: 3px solid var(--primary-color);
-      color: var(--primary-color);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 1.5rem;
-      background: var(--bg-dark);
-      transition: all 0.3s ease;
-    }
-
-    .counter-box:hover .ico-circle {
-      background: var(--primary-color);
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(220,38,38,0.4);
     }
 
     /* ===== PORTFOLIO SECTION ===== */
-    .portfolio-mf { padding: 80px 0; }
-    .subtitle-a { color: var(--text-secondary); font-weight: 400; }
-    .line-mf { width: 70px; height: 4px; background: var(--primary-color); margin: 20px auto; border-radius: 2px; }
-    .text-muted { color: #6b7280 !important; }
+    .portfolio-mf {
+      background: var(--bg-dark);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .portfolio-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(220,38,38,0.15);
+    }
+
+    .portfolio-img {
+      height: 200px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 3rem;
+    }
+
+    .portfolio-info {
+      padding: 20px;
+    }
+
+    .portfolio-info h4 {
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-info p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .portfolio-placeholder {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    .portfolio-placeholder i {
+      font-size: 4rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .portfolio-placeholder .lead {
+      margin-bottom: 15px;
+    }
 
     /* ===== CONTACT SECTION ===== */
-    #contact {
+    .contact-mf {
       background: var(--bg-dark);
-      position: relative;
-      padding: 80px 0;
     }
 
-    #contact .overlay-mf {
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, var(--bg-dark) 0%, #0f0f0f 100%);
-      z-index: 1;
+    .contact-info {
+      margin-bottom: 40px;
     }
 
-    #contact > .container { position: relative; z-index: 2; }
+    .contact-info .lead {
+      text-align: left;
+      margin-bottom: 25px;
+    }
 
-    .list-ico li { color: var(--text-primary); margin: 12px 0; font-weight: 500; }
-    .list-ico a { color: var(--primary-color); text-decoration: none; transition: color 0.2s ease; font-weight: 600; }
-    .list-ico a:hover { color: var(--primary-dark); text-decoration: underline; }
-    .list-ico .bi { color: var(--primary-color); font-size: 1.2rem; margin-right: 8px; vertical-align: middle; }
+    .list-ico {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-    /* Dark Form Styling */
+    .list-ico li {
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .list-ico .bi {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      width: 20px;
+    }
+
+    .list-ico a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .list-ico a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Contact Form */
     .form-control {
       background: var(--bg-dark);
       border: 1px solid var(--border-color);
       color: var(--text-primary);
       padding: 12px 16px;
-      border-radius: 8px;
+      border-radius: 6px;
       transition: all 0.3s ease;
+      width: 100%;
+      margin-bottom: 15px;
     }
+
     .form-control:focus {
       background: var(--bg-dark);
       border-color: var(--primary-color);
       color: var(--text-primary);
-      box-shadow: 0 0 0 0.2rem rgba(220,38,38,0.25);
+      box-shadow: 0 0 0 3px rgba(220,38,38,0.1);
+      outline: none;
     }
-    .form-control::placeholder { color: #52525b; }
-    textarea.form-control { resize: vertical; }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background-color: #050505;
-      color: var(--text-secondary);
-      padding: 25px 0;
-      border-top: 2px solid var(--primary-color);
+    .form-control::placeholder {
+      color: #52525b;
     }
-    footer .copyright { margin: 0; font-weight: 400; font-size: 0.95rem; }
-    footer strong { color: var(--primary-color); font-weight: 700; }
 
-    /* ===== UTILITIES ===== */
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
     .btn {
       background: var(--primary-color);
       color: white;
       border: none;
-      padding: 12px 32px;
-      border-radius: 50px;
+      padding: 12px 30px;
+      border-radius: 6px;
       font-weight: 600;
+      cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(220,38,38,0.3);
+      display: inline-block;
+      text-decoration: none;
+      width: 100%;
     }
+
     .btn:hover {
       background: var(--primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(220,38,38,0.5);
-      color: white;
+      box-shadow: 0 5px 15px rgba(220,38,38,0.3);
     }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary-color);
-      color: var(--primary-color);
-    }
-    .btn-outline:hover { background: var(--primary-color); color: white; }
 
+    /* ===== FOOTER ===== */
+    footer {
+      background: #050505;
+      border-top: 2px solid var(--primary-color);
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    footer .copyright {
+      color: var(--text-secondary);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    footer strong {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    footer .small {
+      color: #6b7280;
+      margin-top: 10px;
+      font-size: 0.85rem;
+    }
+
+    /* ===== UTILITIES ===== */
     .back-to-top {
-      position: fixed; bottom: 25px; right: 25px;
-      width: 45px; height: 45px;
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
       background: var(--primary-color);
       color: white;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
       box-shadow: 0 4px 15px rgba(220,38,38,0.4);
       transition: all 0.3s ease;
       z-index: 999;
+      opacity: 0;
+      visibility: hidden;
     }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
     .back-to-top:hover {
       background: var(--primary-dark);
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(220,38,38,0.6);
     }
-    .back-to-top i { font-size: 1.3rem; }
+
+    .text-danger {
+      color: var(--primary-color) !important;
+    }
+
+    .mb-3 { margin-bottom: 1rem; }
+    .mb-4 { margin-bottom: 1.5rem; }
+    .mt-3 { margin-top: 1rem; }
+    .mt-4 { margin-top: 1.5rem; }
+    .mt-5 { margin-top: 2rem; }
+    .pt-4 { padding-top: 1.5rem; }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-dark);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spinner-border {
+      width: 3rem;
+      height: 3rem;
+      border-width: 0.25em;
+    }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero-title { font-size: 2.6rem; }
-      .hero-subtitle { font-size: 1.4rem; }
-      .navbar ul { padding: 8px 15px; }
-      .counter-num .counter { font-size: 2.2rem; }
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .navbar ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-card);
+        flex-direction: column;
+        padding: 20px;
+        border-top: 1px solid var(--border-color);
+        gap: 15px;
+      }
+
+      .navbar ul.show {
+        display: flex;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .box-shadow-full {
+        padding: 25px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header id="header" class="fixed-top">
+  <header id="header">
     <div class="container d-flex align-items-center justify-content-between">
-      <div class="logo">
-        <a href="index.html">
-          <img src="https://i.ibb.co/dJg5Tg5n/KYz-T9.jpg" alt="MG NEXUS Logo" title="MG NEXUS">
-        </a>
-      </div>
-
+      <a href="#" class="logo">MG <span>NEXUS</span></a>
+      
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">HOME</a></li>
-          <li><a class="nav-link scrollto" href="#about">ABOUT</a></li>
-          <li><a class="nav-link scrollto" href="#services">SERVICES</a></li>
-          <li><a class="nav-link scrollto" href="#work">WORK</a></li>
-          <li><a class="nav-link scrollto" href="#contact">CONTACT</a></li>
+          <li><a class="nav-link active" href="#hero">HOME</a></li>
+          <li><a class="nav-link" href="#about">ABOUT</a></li>
+          <li><a class="nav-link" href="#services">SERVICES</a></li>
+          <li><a class="nav-link" href="#work">WORK</a></li>
+          <li><a class="nav-link" href="#contact">CONTACT</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <button class="mobile-nav-toggle" onclick="toggleMenu()">
+          <i class="bi bi-list"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -348,82 +731,67 @@
   <!-- Hero Section -->
   <section id="hero">
     <div class="hero-content">
-      <div class="container text-center">
-        <h1 class="hero-title">I am Ogunremi Marvellous</h1>
-        <p class="hero-subtitle">
-          <span class="typed" data-typed-items="Full Stack Developer, Web Designer, Data Analyst"></span>
-        </p>
-        <p class="lead mt-4">
-          Connecting Code, Design &amp; Data with Precision
-        </p>
-        <div class="mt-5">
-          <a href="#contact" class="btn me-3">Hire Me</a>
-          <a href="#work" class="btn btn-outline">View Work</a>
-        </div>
-      </div>
+      <h1 class="hero-title">I am Ogunremi Marvellous</h1>
+      <p class="hero-subtitle">
+        <span class="typed" data-typed-items="Full Stack Developer, Web Designer, Data Analyst"></span>
+      </p>
+      <p class="lead mt-4">
+        Connecting Code, Design & Data with Precision
+      </p>
     </div>
   </section>
 
   <main id="main">
 
     <!-- About Section -->
-    <section id="about" class="about-mf sect-pt4 route">
+    <section id="about" class="about-mf">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="box-shadow-full">
               <div class="row">
                 <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="https://i.ibb.co/gmSFsRW/L.jpg" class="img-fluid rounded b-shadow-a" alt="Ogunremi Marvellous" loading="lazy">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Name:</span> Ogunremi Marvellous</p>
-                        <p><span class="title-s">Profile:</span> Full Stack Developer, Web Designer & Data Analyst</p>
-                        <p><span class="title-s">Email:</span> <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></p>
-                        <p><span class="title-s">Phone:</span> <a href="tel:08107436260">08107436260</a></p>
-                      </div>
-                    </div>
+                  <div class="about-info">
+                    <p><span class="title-s">Name:</span> Ogunremi Marvellous</p>
+                    <p><span class="title-s">Profile:</span> Full Stack Developer, Web Designer & Data Analyst</p>
+                    <p><span class="title-s">Email:</span> <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></p>
+                    <p><span class="title-s">Phone:</span> <a href="tel:08107436260">08107436260</a></p>
                   </div>
+
                   <div class="skill-mf">
-                    <p class="title-s">Technical Skills</p>
-                    <span>HTML5 & CSS3</span> <span class="pull-right">95%</span>
+                    <span class="title-s">Skill</span>
+                    
+                    <span>HTML5 <span class="pull-right">95%</span></span>
                     <div class="progress"><div class="progress-bar" style="width: 95%"></div></div>
                     
-                    <span>JavaScript / TypeScript</span> <span class="pull-right">90%</span>
-                    <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+                    <span>CSS3 <span class="pull-right">95%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 95%"></div></div>
                     
-                    <span>React.js / Next.js</span> <span class="pull-right">85%</span>
+                    <span>REACT-JS <span class="pull-right">85%</span></span>
                     <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
                     
-                    <span>Backend (Node/Python)</span> <span class="pull-right">80%</span>
-                    <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
-                    
-                    <span>Data Analysis (SQL/Pandas)</span> <span class="pull-right">75%</span>
-                    <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
+                    <span>JAVASCRIPT <span class="pull-right">90%</span></span>
+                    <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
                   </div>
                 </div>
+
                 <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
+                  <div class="about-me">
                     <div class="title-box-2">
-                      <h5 class="title-left">About Me</h5>
+                      <h5 class="title-left">About me</h5>
                     </div>
                     <p class="lead">
-                      I am Ogunremi Marvellous, a passionate Full Stack Developer, Web Designer, and Data Analyst 
-                      with a strong drive for building beautiful, functional, and data-driven digital solutions.
+                      I am a seasoned Web Developer specializing in the creation of dynamic and responsive Websites and Web Applications,
+                      with a professional track record spanning over 2 years.
+                      I invite you to explore my portfolio showcased in the Projects section to witness the caliber of my work.
                     </p>
                     <p class="lead">
-                      I specialize in developing modern, responsive websites and robust web applications using the latest technologies — 
-                      always with performance, accessibility, and user experience at the forefront.
+                      In addition to my technical expertise, I am passionate about knowledge sharing within the web development community.
+                      Over the years, I have accumulated valuable insights and industry best practices, which I am eager to disseminate.
                     </p>
-                    <p class="lead mt-3">
-                      <i class="bi bi-check-circle-fill text-danger me-2"></i> Clean, maintainable code<br>
-                      <i class="bi bi-check-circle-fill text-danger me-2"></i> Mobile-first responsive design<br>
-                      <i class="bi bi-check-circle-fill text-danger me-2"></i> Data-informed decision making
+                    <p class="lead">
+                      Actively seeking new professional challenges,
+                      I am open to job opportunities where I can contribute my skills, continue learning, and foster personal and professional growth.
                     </p>
                   </div>
                 </div>
@@ -434,35 +802,106 @@
       </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="services" class="services-mf">
+      <div class="container">
+        <div class="title-box text-center">
+          <h3 class="title-a">Services</h3>
+          <p class="subtitle-a">Here Are The Services I Offer.</p>
+          <div class="line-mf"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <i class="bi bi-palette"></i>
+              </div>
+              <h4 class="title-s">Web Design</h4>
+              <p>
+                Create captivating websites with our expert design services.
+                We blend creativity and functionality to transform your vision into an engaging online reality.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <i class="bi bi-code-slash"></i>
+              </div>
+              <h4 class="title-s">Web Development</h4>
+              <p>
+                Build robust and scalable web applications using modern technologies.
+                From frontend to backend, I deliver solutions that drive results.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+              <h4 class="title-s">Data Analysis</h4>
+              <p>
+                Transform raw data into actionable insights.
+                I help businesses make data-driven decisions through comprehensive analysis and visualization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Counter Section -->
-    <div class="section-counter paralax-mf bg-image">
-      <div class="overlay-mf"></div>
-      <div class="container position-relative">
-        <div class="row text-center">
-          <div class="col-sm-4">
-            <div class="counter-box pt-4">
-              <div class="counter-ico"><span class="ico-circle"><i class="bi bi-check-all"></i></span></div>
+    <div class="section-counter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 col-6">
+            <div class="counter-box">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-check-all"></i></span>
+              </div>
               <div class="counter-num">
                 <p data-purecounter-start="0" data-purecounter-end="25" class="counter purecounter"></p>
-                <span class="counter-text">Projects Completed</span>
+                <span class="counter-text">WORKS COMPLETED</span>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="counter-box pt-4">
-              <div class="counter-ico"><span class="ico-circle"><i class="bi bi-clock-history"></i></span></div>
+
+          <div class="col-sm-3 col-6">
+            <div class="counter-box">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-clock-history"></i></span>
+              </div>
               <div class="counter-num">
                 <p data-purecounter-start="0" data-purecounter-end="2" class="counter purecounter"></p>
-                <span class="counter-text">Years Experience</span>
+                <span class="counter-text">YEARS OF EXPERIENCE</span>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="counter-box pt-4">
-              <div class="counter-ico"><span class="ico-circle"><i class="bi bi-people-fill"></i></span></div>
+
+          <div class="col-sm-3 col-6">
+            <div class="counter-box">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-people-fill"></i></span>
+              </div>
               <div class="counter-num">
                 <p data-purecounter-start="0" data-purecounter-end="15" class="counter purecounter"></p>
-                <span class="counter-text">Happy Clients</span>
+                <span class="counter-text">TOTAL CLIENTS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 col-6">
+            <div class="counter-box">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-arrow-repeat"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="8" class="counter purecounter"></p>
+                <span class="counter-text">REPEAT CLIENTS</span>
               </div>
             </div>
           </div>
@@ -471,92 +910,64 @@
     </div>
 
     <!-- Portfolio Section -->
-    <section id="work" class="portfolio-mf sect-pt4 route">
+    <section id="work" class="portfolio-mf">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">Featured Work</h3>
-              <p class="subtitle-a">A selection of projects showcasing design, development & data expertise</p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
+        <div class="title-box text-center">
+          <h3 class="title-a">Portfolio</h3>
+          <p class="subtitle-a">Here are some of the designs and website i have made.</p>
+          <div class="line-mf"></div>
         </div>
-        <div class="row mt-5">
-          <div class="col-12 text-center py-5">
-            <div class="box-shadow-full p-4 p-md-5">
-              <i class="bi bi-code-slash display-4 text-danger mb-3"></i>
-              <p class="lead mb-4">New projects are currently in development.</p>
-              <p class="text-muted mb-4">Check back soon for live case studies, or contact me to discuss your next project.</p>
-              <a href="#contact" class="btn">Start a Project</a>
-            </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-placeholder">
+            <i class="bi bi-code-slash"></i>
+            <p class="lead">New projects are currently in development.</p>
+            <p class="text-secondary mb-4">Check back soon for live case studies, or contact me to discuss your next project.</p>
+            <a href="#contact" class="btn" style="width: auto; padding: 10px 25px;">Start a Project</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route">
-      <div class="overlay-mf"></div>
+    <section id="contact" class="contact-mf">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-mf">
-              <div class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">Let's Work Together</h5>
-                    </div>
-                    <div class="more-info">
-                      <p class="lead">
-                        Have a project in mind? Need a technical partner? I'm currently available for freelance work and collaborations.
-                      </p>
-                      <ul class="list-ico mt-4">
-                        <li>
-                          <span class="bi bi-envelope-fill"></span> 
-                          <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a>
-                        </li>
-                        <li>
-                          <span class="bi bi-telephone-fill"></span> 
-                          <a href="tel:08107436260">08107436260</a>
-                        </li>
-                        <li>
-                          <span class="bi bi-geo-alt-fill"></span> 
-                          <span>Nigeria (Remote Worldwide)</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">Quick Contact</h5>
-                    </div>
-                    <!-- Vercel-Compatible Form (Formsubmit.co) -->
-                    <form 
-                      action="https://formsubmit.co/mogunremi1@gmail.com" 
-                      method="POST" 
-                      class="mt-4"
-                    >
-                      <input type="hidden" name="_captcha" value="false">
-                      <input type="hidden" name="_subject" value="New Portfolio Inquiry - MG NEXUS">
-                      <input type="text" name="_honey" style="display:none"> <!-- Spam honeypot -->
+        <div class="title-box text-center">
+          <h3 class="title-a">Get in Touch</h3>
+          <p class="subtitle-a">Do you have any inquiry or any questions considering the services i offer send me a message today?. Thank You.</p>
+          <div class="line-mf"></div>
+        </div>
 
-                      <div class="mb-3">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name *" required>
-                      </div>
-                      <div class="mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Your Email *" required>
-                      </div>
-                      <div class="mb-3">
-                        <textarea name="message" class="form-control" rows="4" placeholder="Your Message *" required></textarea>
-                      </div>
-                      <button type="submit" class="btn w-100">Send Message</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="contact-info text-center">
+              <ul class="list-ico justify-content-center" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                <li>
+                  <i class="bi bi-envelope-fill"></i>
+                  <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a>
+                </li>
+                <li>
+                  <i class="bi bi-telephone-fill"></i>
+                  <a href="tel:08107436260">08107436260</a>
+                </li>
+              </ul>
             </div>
+
+            <form 
+              action="https://formsubmit.co/mogunremi1@gmail.com" 
+              method="POST" 
+              class="mt-5"
+              style="max-width: 600px; margin: 40px auto 0;"
+            >
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_subject" value="New Portfolio Inquiry - MG NEXUS">
+              <input type="text" name="_honey" style="display:none">
+
+              <input type="text" name="name" class="form-control" placeholder="Your Name *" required>
+              <input type="email" name="email" class="form-control" placeholder="Your Email *" required>
+              <textarea name="message" class="form-control" placeholder="Your Message *" required></textarea>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
           </div>
         </div>
       </div>
@@ -566,39 +977,69 @@
 
   <footer>
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12 text-center">
-          <p class="copyright">© <span id="year"></span> <strong>MG NEXUS</strong>. All Rights Reserved</p>
-          <p class="mt-2 small" style="color:#6b7280;">
-            Crafted with <i class="bi bi-heart-fill text-danger"></i> by Ogunremi Marvellous
-          </p>
-        </div>
-      </div>
+      <p class="copyright">© <span id="year"></span> <strong>MG NEXUS</strong>. All Rights Reserved</p>
+      <p class="small">
+        Crafted with <i class="bi bi-heart-fill text-danger"></i> by Ogunremi Marvellous
+      </p>
     </div>
   </footer>
 
-  <div id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-dark);z-index:9999;display:flex;align-items:center;justify-content:center;">
-    <div class="spinner-border text-danger" role="status" style="width:3rem;height:3rem;">
+  <div id="preloader">
+    <div class="spinner-border text-danger" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+  <a href="#" class="back-to-top" id="backToTop">
     <i class="bi bi-arrow-up-short"></i>
   </a>
 
   <script>
+    // Auto-update copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Hide preloader
     window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       if(preloader) preloader.style.display = 'none';
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar ul');
+      navbar.classList.toggle('show');
+    }
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Close mobile menu if open
+          document.querySelector('.navbar ul')?.classList.remove('show');
+        }
+      });
     });
   </script>
   
   <script src="js/purecounter_vanilla.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/glightbox.min.js"></script>
-  <script src="js/swiper-bundle.min.css"></script>
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/typed.umd.js"></script>
   <script src="js/main.js"></script>
