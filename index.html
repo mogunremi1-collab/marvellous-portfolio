@@ -25,37 +25,40 @@
 
   <style>
     :root {
-      --primary-color: #dc2626;       /* Bold red accent */
-      --primary-dark: #b91c1c;         /* Darker red for hover states */
-      --text-dark: #1a1a1a;            /* Near-black text */
-      --text-light: #4a4a4a;           /* Secondary text */
-      --light-bg: #ffffff;             /* Pure white background */
-      --border-color: #e5e7eb;         /* Subtle borders */
+      --primary-color: #dc2626;       /* Bold Red */
+      --primary-dark: #b91c1c;        /* Dark Red */
+      --bg-dark: #0a0a0a;             /* Main Background */
+      --bg-card: #111111;             /* Card/Box Background */
+      --bg-header: rgba(10,10,10,0.95);
+      --text-primary: #ffffff;        /* White Text */
+      --text-secondary: #a1a1aa;      /* Muted Gray */
+      --border-color: #27272a;        /* Dark Borders */
+      --accent-glow: rgba(220,38,38,0.15);
     }
 
     body {
-      background-color: var(--light-bg);
-      color: var(--text-dark);
-      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: 'Poppins', system-ui, sans-serif;
     }
 
     /* ===== HEADER & NAV ===== */
     header {
-      background: rgba(255,255,255,0.98);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-      border-bottom: 2px solid var(--primary-color);
+      background: var(--bg-header);
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(8px);
     }
 
     .navbar ul {
-      background: white;
+      background: var(--bg-card);
       padding: 10px 25px;
       border-radius: 50px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
       border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     .nav-link {
-      color: var(--text-dark) !important;
+      color: var(--text-secondary) !important;
       font-weight: 600;
       position: relative;
       transition: color 0.3s ease;
@@ -81,44 +84,38 @@
     .logo img {
       height: 58px;
       width: auto;
-      border: 2px solid var(--primary-color);
+      border: 2px solid var(--border-color);
       border-radius: 8px;
-      padding: 2px;
+      padding: 3px;
+      background: var(--bg-card);
     }
 
     /* ===== HERO SECTION ===== */
     #hero {
       height: 100vh;
       min-height: 650px;
-      background-image: 
-        linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.95)), 
-        url('https://i.ibb.co/dJg5Tg5n/KYz-T9.jpg');
-      background-size: cover;
-      background-position: center;
+      background: radial-gradient(circle at 50% 40%, #151515 0%, var(--bg-dark) 75%);
       display: flex;
       align-items: center;
       position: relative;
+      overflow: hidden;
     }
 
     #hero::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(circle at 30% 20%, rgba(220,38,38,0.08), transparent 40%);
+      top: -20%; left: -10%; width: 60%; height: 60%;
+      background: radial-gradient(circle, var(--accent-glow), transparent 70%);
       pointer-events: none;
     }
 
-    .hero-content {
-      width: 100%;
-      position: relative;
-      z-index: 2;
-    }
+    .hero-content { width: 100%; position: relative; z-index: 2; }
 
     .hero-title {
       font-size: 3.4rem;
       font-weight: 800;
-      color: var(--text-dark);
-      text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      color: var(--text-primary);
+      text-shadow: 0 4px 15px rgba(0,0,0,0.5);
       letter-spacing: -0.5px;
     }
 
@@ -129,22 +126,22 @@
     }
 
     .lead {
-      color: var(--text-light);
+      color: var(--text-secondary);
       font-size: 1.25rem;
       font-weight: 400;
     }
 
     /* ===== CONTENT BOXES ===== */
     .box-shadow-full {
-      background-color: #ffffff;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      background-color: var(--bg-card);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       overflow: hidden;
     }
 
     .title-a, .title-left {
-      color: var(--text-dark) !important;
+      color: var(--text-primary) !important;
       font-weight: 700;
       position: relative;
       padding-bottom: 10px;
@@ -153,28 +150,18 @@
     .title-left::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 3px;
+      bottom: 0; left: 0;
+      width: 50px; height: 3px;
       background: var(--primary-color);
       border-radius: 2px;
     }
 
     /* ===== SKILLS & PROGRESS ===== */
-    .skill-mf .title-s {
-      color: var(--text-dark);
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-
-    .skill-mf span:not(.pull-right) {
-      color: var(--text-dark);
-      font-weight: 500;
-    }
+    .skill-mf .title-s { color: var(--text-primary); font-weight: 600; margin-bottom: 15px; }
+    .skill-mf span:not(.pull-right) { color: var(--text-primary); font-weight: 500; }
 
     .progress {
-      background-color: #f3f4f6;
+      background-color: #27272a;
       border-radius: 6px;
       height: 8px;
       margin-bottom: 20px;
@@ -183,25 +170,13 @@
     .progress-bar {
       background: linear-gradient(90deg, var(--primary-color), var(--primary-dark)) !important;
       border-radius: 6px;
-      position: relative;
-      overflow: visible;
-    }
-
-    .progress-bar::after {
-      content: attr(style);
-      position: absolute;
-      right: -10px;
-      top: -24px;
-      color: var(--primary-color);
-      font-weight: 600;
-      font-size: 0.85rem;
     }
 
     /* ===== COUNTER SECTION ===== */
     .section-counter {
-      background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://i.ibb.co/cDmk7V0/counters-bg.jpg');
-      background-size: cover;
-      background-position: center;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
       padding: 60px 0;
     }
 
@@ -214,7 +189,7 @@
     }
 
     .counter-text {
-      color: var(--text-light);
+      color: var(--text-secondary);
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -222,16 +197,14 @@
     }
 
     .ico-circle {
-      width: 70px;
-      height: 70px;
+      width: 70px; height: 70px;
       border: 3px solid var(--primary-color);
       color: var(--primary-color);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       margin: 0 auto 20px;
       font-size: 1.5rem;
+      background: var(--bg-dark);
       transition: all 0.3s ease;
     }
 
@@ -239,122 +212,64 @@
       background: var(--primary-color);
       color: white;
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(220,38,38,0.3);
+      box-shadow: 0 8px 25px rgba(220,38,38,0.4);
     }
 
     /* ===== PORTFOLIO SECTION ===== */
-    .portfolio-mf {
-      padding: 80px 0;
-    }
-
-    .subtitle-a {
-      color: var(--text-light);
-      font-weight: 400;
-    }
-
-    .line-mf {
-      width: 70px;
-      height: 4px;
-      background: var(--primary-color);
-      margin: 20px auto;
-      border-radius: 2px;
-    }
+    .portfolio-mf { padding: 80px 0; }
+    .subtitle-a { color: var(--text-secondary); font-weight: 400; }
+    .line-mf { width: 70px; height: 4px; background: var(--primary-color); margin: 20px auto; border-radius: 2px; }
+    .text-muted { color: #6b7280 !important; }
 
     /* ===== CONTACT SECTION ===== */
     #contact {
-      background-image: url('https://i.ibb.co/qYLB5Z2/overlay-bg.jpg');
-      background-size: cover;
-      background-position: center;
+      background: var(--bg-dark);
       position: relative;
       padding: 80px 0;
     }
 
     #contact .overlay-mf {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,245,245,0.98) 100%);
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, var(--bg-dark) 0%, #0f0f0f 100%);
       z-index: 1;
     }
 
-    #contact > .container {
-      position: relative;
-      z-index: 2;
-    }
+    #contact > .container { position: relative; z-index: 2; }
 
-    .list-ico li {
-      color: var(--text-dark);
-      margin: 12px 0;
-      font-weight: 500;
-    }
+    .list-ico li { color: var(--text-primary); margin: 12px 0; font-weight: 500; }
+    .list-ico a { color: var(--primary-color); text-decoration: none; transition: color 0.2s ease; font-weight: 600; }
+    .list-ico a:hover { color: var(--primary-dark); text-decoration: underline; }
+    .list-ico .bi { color: var(--primary-color); font-size: 1.2rem; margin-right: 8px; vertical-align: middle; }
 
-    .list-ico a {
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: color 0.2s ease;
-      font-weight: 600;
+    /* Dark Form Styling */
+    .form-control {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
     }
-
-    .list-ico a:hover {
-      color: var(--primary-dark);
-      text-decoration: underline;
+    .form-control:focus {
+      background: var(--bg-dark);
+      border-color: var(--primary-color);
+      color: var(--text-primary);
+      box-shadow: 0 0 0 0.2rem rgba(220,38,38,0.25);
     }
-
-    .list-ico .bi {
-      color: var(--primary-color);
-      font-size: 1.2rem;
-      margin-right: 8px;
-      vertical-align: middle;
-    }
+    .form-control::placeholder { color: #52525b; }
+    textarea.form-control { resize: vertical; }
 
     /* ===== FOOTER ===== */
     footer {
-      background-color: #1a1a1a;
-      color: #ffffff;
+      background-color: #050505;
+      color: var(--text-secondary);
       padding: 25px 0;
-      border-top: 3px solid var(--primary-color);
+      border-top: 2px solid var(--primary-color);
     }
+    footer .copyright { margin: 0; font-weight: 400; font-size: 0.95rem; }
+    footer strong { color: var(--primary-color); font-weight: 700; }
 
-    footer .copyright {
-      margin: 0;
-      font-weight: 400;
-      font-size: 0.95rem;
-    }
-
-    footer strong {
-      color: var(--primary-color);
-      font-weight: 700;
-    }
-
-    /* ===== UTILITIES & ANIMATIONS ===== */
-    .back-to-top {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 45px;
-      height: 45px;
-      background: var(--primary-color);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(220,38,38,0.4);
-      transition: all 0.3s ease;
-      z-index: 999;
-    }
-
-    .back-to-top:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(220,38,38,0.6);
-    }
-
-    .back-to-top i {
-      font-size: 1.3rem;
-    }
-
-    /* Buttons */
+    /* ===== UTILITIES ===== */
     .btn {
       background: var(--primary-color);
       color: white;
@@ -365,26 +280,39 @@
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(220,38,38,0.3);
     }
-
     .btn:hover {
       background: var(--primary-dark);
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(220,38,38,0.5);
       color: white;
     }
-
     .btn-outline {
       background: transparent;
       border: 2px solid var(--primary-color);
       color: var(--primary-color);
     }
+    .btn-outline:hover { background: var(--primary-color); color: white; }
 
-    .btn-outline:hover {
+    .back-to-top {
+      position: fixed; bottom: 25px; right: 25px;
+      width: 45px; height: 45px;
       background: var(--primary-color);
       color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(220,38,38,0.4);
+      transition: all 0.3s ease;
+      z-index: 999;
     }
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(220,38,38,0.6);
+    }
+    .back-to-top i { font-size: 1.3rem; }
 
-    /* Responsive tweaks */
+    /* Responsive */
     @media (max-width: 768px) {
       .hero-title { font-size: 2.6rem; }
       .hero-subtitle { font-size: 1.4rem; }
@@ -604,15 +532,24 @@
                     <div class="title-box-2 pt-4 pt-md-0">
                       <h5 class="title-left">Quick Contact</h5>
                     </div>
-                    <form class="mt-4">
+                    <!-- Vercel-Compatible Form (Formsubmit.co) -->
+                    <form 
+                      action="https://formsubmit.co/mogunremi1@gmail.com" 
+                      method="POST" 
+                      class="mt-4"
+                    >
+                      <input type="hidden" name="_captcha" value="false">
+                      <input type="hidden" name="_subject" value="New Portfolio Inquiry - MG NEXUS">
+                      <input type="text" name="_honey" style="display:none"> <!-- Spam honeypot -->
+
                       <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Your Name *" required>
+                        <input type="text" name="name" class="form-control" placeholder="Your Name *" required>
                       </div>
                       <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Your Email *" required>
+                        <input type="email" name="email" class="form-control" placeholder="Your Email *" required>
                       </div>
                       <div class="mb-3">
-                        <textarea class="form-control" rows="4" placeholder="Your Message *" required></textarea>
+                        <textarea name="message" class="form-control" rows="4" placeholder="Your Message *" required></textarea>
                       </div>
                       <button type="submit" class="btn w-100">Send Message</button>
                     </form>
@@ -632,7 +569,7 @@
       <div class="row">
         <div class="col-sm-12 text-center">
           <p class="copyright">© <span id="year"></span> <strong>MG NEXUS</strong>. All Rights Reserved</p>
-          <p class="mt-2 small text-muted">
+          <p class="mt-2 small" style="color:#6b7280;">
             Crafted with <i class="bi bi-heart-fill text-danger"></i> by Ogunremi Marvellous
           </p>
         </div>
@@ -640,7 +577,7 @@
     </div>
   </footer>
 
-  <div id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:white;z-index:9999;display:flex;align-items:center;justify-content:center;">
+  <div id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg-dark);z-index:9999;display:flex;align-items:center;justify-content:center;">
     <div class="spinner-border text-danger" role="status" style="width:3rem;height:3rem;">
       <span class="visually-hidden">Loading...</span>
     </div>
@@ -651,10 +588,7 @@
   </a>
 
   <script>
-    // Auto-update copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Hide preloader when page loads
     window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       if(preloader) preloader.style.display = 'none';
@@ -664,6 +598,7 @@
   <script src="js/purecounter_vanilla.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/glightbox.min.js"></script>
+  <script src="js/swiper-bundle.min.css"></script>
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/typed.umd.js"></script>
   <script src="js/main.js"></script>
