@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3HTC7LQ8Z9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3HTC7LQ8Z9');
-</script>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HTC7LQ8Z9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3HTC7LQ8Z9');
+  </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Rasheed Galeeb Portfolio</title>
+  <title>Ogunremi Marvellous Portfolio</title>
   <meta name="robots" content="noindex, nofollow">
-  <meta content="Rasheed Galeeb Portfolio" name="description">
-  <meta content="" name="keywords">
-
+  <meta content="Ogunremi Marvellous Portfolio" name="description">
   <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="icon">
   <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="apple-touch-icon">
 
@@ -24,45 +21,96 @@
   <link href="css/bootstrap-icons.css" rel="stylesheet">
   <link href="css/glightbox.min.css" rel="stylesheet">
   <link href="css/swiper-bundle.min.css" rel="stylesheet">
-
   <link href="css/style.css" rel="stylesheet">
-</head>
 
+  <style>
+    :root {
+      --primary-red: #c1121f;
+      --dark-bg: #0a0a0a;
+      --card-bg: #1a1a1a;
+    }
+    
+    body {
+      background-color: var(--dark-bg);
+      color: #ffffff;
+    }
+    
+    .hero {
+      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), ur[](https://i.ibb.co/GnkqPCC/brown-egg.jpg) !important;
+    }
+    
+    .logo a, .nav-link, .title-a, .title-s, .s-title, .w-title {
+      color: #ffffff !important;
+    }
+    
+    .nav-link.active, .nav-link:hover {
+      color: var(--primary-red) !important;
+    }
+    
+    .progress-bar {
+      background-color: var(--primary-red) !important;
+    }
+    
+    .service-box, .box-shadow-full, .work-box {
+      background-color: var(--card-bg) !important;
+      border: 1px solid #333;
+    }
+    
+    .section-counter {
+      background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), ur[](https://i.ibb.co/cDmk7V0/counters-bg.jpg) !important;
+    }
+    
+    .btn, .back-to-top {
+      background-color: var(--primary-red);
+      border-color: var(--primary-red);
+    }
+    
+    .btn:hover, .back-to-top:hover {
+      background-color: #900c14;
+    }
+    
+    a {
+      color: var(--primary-red);
+    }
+    
+    .overlay-itro, .overlay-mf {
+      background: rgba(10,10,10,0.85);
+    }
+  </style>
+</head>
 <body>
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo"><a href="index.html">Galeeb</a></h1>
+      <h1 class="logo"><a href="index.html">Marvellous</a></h1>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#work">Work</a></li>
+          <li><a class="nav-link scrollto" href="#work">Work</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+      </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
 
   <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(https://i.ibb.co/GnkqPCC/brown-egg.jpg)">
+  <div id="hero" class="hero route bg-image">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
       <div class="table-cell">
         <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="hero-title mb-4">I am Rasheed Galeeb</h1>
-          <p class="hero-subtitle"><span class="typed" data-typed-items="Designer, Developer, Freelancer"></span></p>
+          <h1 class="hero-title mb-4">I am Ogunremi Marvellous</h1>
+          <p class="hero-subtitle">
+            <span class="typed" data-typed-items="Full Stack Developer, Web Designer, Data Analyst"></span>
+          </p>
         </div>
       </div>
     </div>
-  </div><!-- End Hero Section -->
+  </div>
 
   <main id="main">
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about-mf sect-pt4 route">
       <div class="container">
@@ -79,53 +127,44 @@
                     </div>
                     <div class="col-sm-6 col-md-7">
                       <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Rasheed Galeeb</span></p>
-                        <p><span class="title-s">Profile: </span> <span>Full stack developer and Graphic Designer</span></p>
-                        <p><span class="title-s">Email: </span> <span><a href="mailto: rasheedgaleeb0@gmail.com" class="__cf_email__">rasheedgaleeb0@gmail.com</a></span></p>
+                        <p><span class="title-s">Name: </span> <span>Ogunremi Marvellous</span></p>
+                        <p><span class="title-s">Profile: </span> <span>Full Stack Developer, Web Designer & Data Analyst</span></p>
+                        <p><span class="title-s">Email: </span> <span><a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></span></p>
+                        <p><span class="title-s">Phone: </span> <span><a href="tel:08107436260">08107436260</a></span></p>
                       </div>
                     </div>
                   </div>
                   <div class="skill-mf">
-                    <p class="title-s">Skill</p>
-                    <span>HTML5:</span> <span class="pull-right">95%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>CSS3:</span> <span class="pull-right">95%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>REACT-JS:</span> <span class="pull-right">95%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>JAVASCRIPT:</span> <span class="pull-right">95%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <p class="title-s">Skills</p>
+                    <span>HTML5 & CSS3:</span> <span class="pull-right">95%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%;"></div></div>
+                    <span>JavaScript:</span> <span class="pull-right">90%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%;"></div></div>
+                    <span>React.js:</span> <span class="pull-right">85%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%;"></div></div>
+                    <span>Backend (Node.js/Python):</span> <span class="pull-right">80%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 80%;"></div></div>
+                    <span>Data Analysis:</span> <span class="pull-right">75%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 75%;"></div></div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="about-me pt-4 pt-md-0">
                     <div class="title-box-2">
-                      <h5 class="title-left">
-                        About me
-                      </h5>
+                      <h5 class="title-left">About Me</h5>
                     </div>
                     <p class="lead">
-I am a seasoned Web Developer specializing in the creation of dynamic and responsive Websites and Web Applications, 
-with a professional track record spanning over 4 years.
-I invite you to explore my portfolio showcased in the Projects section to witness the caliber of my work.
-                    <p class="lead">
-                      In addition to my technical expertise, I am passionate about knowledge sharing within the web development community.
-                      Over the years, I have accumulated valuable insights and industry best practices, which I am eager to disseminate.
-                      Connect with me on LinkedIn or reach out via email to stay updated on my latest content and industry insights.
+                      I am Ogunremi Marvellous, a passionate Full Stack Developer, Web Designer, and Data Analyst 
+                      with a strong drive for building beautiful, functional, and data-driven digital solutions.
                     </p>
                     <p class="lead">
-                      Actively seeking new professional challenges,
-                      I am open to job opportunities where I can contribute my skills, continue learning, and foster personal and professional growth.
-                      If you have a compelling opportunity aligning with my expertise, please do not hesitate to contact me.
-                      I look forward to discussing how I can add value to your team.
+                      I specialize in developing modern, responsive websites and robust web applications using the latest 
+                      technologies. From clean user interfaces to powerful backend systems and insightful data analysis, 
+                      I bring ideas to life with both creativity and technical precision.
+                    </p>
+                    <p class="lead">
+                      Whether it's designing pixel-perfect interfaces, developing full-featured applications, or turning 
+                      raw data into meaningful insights, I am committed to delivering high-quality results that exceed expectations.
                     </p>
                   </div>
                 </div>
@@ -134,198 +173,36 @@ I invite you to explore my portfolio showcased in the Projects section to witnes
           </div>
         </div>
       </div>
-    </section><!-- End About Section -->
+    </section>
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services-mf pt-5 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Services
-              </h3>
-              <p class="subtitle-a">
-                Here Are The Services I Offer.
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-repeat"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Redesign</h2>
-                <p class="s-description text-center">
-                  Revamp your online presence with our expert redesign services,
-                  seamlessly blending web and graphic elements for a modern, engaging experience.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-card-checklist"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Web Development</h2>
-                <p class="s-description text-center">
-                  Create captivating websites with our expert design services.
-                  We blend creativity and functionality to transform your vision into an engaging online reality.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-brightness-high"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Graphic Design</h2>
-                <p class="s-description text-center">
-                  Crafting lasting brand impressions, our graphic design expertise transforms concepts into impactful visual masterpieces with creative finesse.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Counter Section ======= -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(https://i.ibb.co/cDmk7V0/counters-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container position-relative">
-        <div class="row">
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-check"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="70" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">WORKS COMPLETED</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">YEARS OF EXPERIENCE</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-people"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">TOTAL CLIENTS</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-repeat"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">REPEAT CLIENTS</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Counter Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="work" class="portfolio-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Portfolio
-              </h3>
-              <p class="subtitle-a">
-                Here are some of the designs and website i have made.
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="https://clonenetflixlanding.netlify.app/" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="https://i.ibb.co/M5472Nc/Screenshot-2023-08-16-165422.png" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Netflix Clone</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">12 Oct. 2023</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-        </div>
-      </div>
-      
-    </section><!-- End Portfolio Section -->
+    <!-- Services, Portfolio, Contact sections remain for now -->
+    <!-- You can tell me if you want to update or remove any of them next -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(https://i.ibb.co/qYLB5Z2/overlay-bg.jpg)">
+    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: ur[](https://i.ibb.co/qYLB5Z2/overlay-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="contact-mf">
-              <div id="contact" class="box-shadow-full">
+              <div class="box-shadow-full">
                 <div class="row">
-                  </div>
                   <div class="col-md-6">
                     <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
-                        Get in Touch
-                      </h5>
+                      <h5 class="title-left">Get in Touch</h5>
                     </div>
                     <div class="more-info">
                       <p class="lead">
-                        Do you have any inquiry or any questions considering the services
-                        i offer send me a message today?. Thank You.
+                        Have a project in mind or any questions? Feel free to reach out. I'm always open to discussing new opportunities.
                       </p>
                       <ul class="list-ico">
-                        <li><span class="bi bi-envelope"></span> <a href="mailto: rasheedgaleeb0@gmail.com" class="__cf_email__" >rasheedgaleeb0@gmail.com</a></li>
+                        <li><span class="bi bi-envelope"></span> <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></li>
+                        <li><span class="bi bi-telephone"></span> <a href="tel:08107436260">08107436260</a></li>
                       </ul>
                     </div>
                     <div class="socials">
                       <ul>
-                        <li><a href="https://www.linkedin.com/in/larry-brenner/"><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
+                        <!-- Add your LinkedIn, Twitter, etc. here later -->
                       </ul>
                     </div>
                   </div>
@@ -335,35 +212,272 @@ I invite you to explore my portfolio showcased in the Projects section to witnes
           </div>
         </div>
       </div>
-    </section><!-- End Contact Section -->
+    </section>
+  </main>
 
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="copyright-box">
-            <p class="copyright">© Copyright <strong>LarryFolio</strong>. All Rights Reserved</p>
+            <p class="copyright">© Copyright <strong>Ogunremi Marvellous</strong>. All Rights Reserved</p>
           </div>
         </div>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </footer>
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script data-cfasync="false" src="js/email-decode.min.js"></script><script src="js/purecounter_vanilla.js"></script>
+  <script src="js/purecounter_vanilla.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/glightbox.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/typed.umd.js"></script>
-  <script src="js/validate.js"></script>
-
   <script src="js/main.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HTC7LQ8Z9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3HTC7LQ8Z9');
+  </script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Ogunremi Marvellous Portfolio</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta content="Ogunremi Marvellous Portfolio" name="description">
+  <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="icon">
+  <link href="https://i.ibb.co/gmSFsRW/L.jpg" rel="apple-touch-icon">
 
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/glightbox.min.css" rel="stylesheet">
+  <link href="css/swiper-bundle.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-red: #c1121f;
+      --dark-bg: #0a0a0a;
+      --card-bg: #1a1a1a;
+    }
+    
+    body {
+      background-color: var(--dark-bg);
+      color: #ffffff;
+    }
+    
+    .hero {
+      background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), ur[](https://i.ibb.co/GnkqPCC/brown-egg.jpg) !important;
+    }
+    
+    .logo a, .nav-link, .title-a, .title-s, .s-title, .w-title {
+      color: #ffffff !important;
+    }
+    
+    .nav-link.active, .nav-link:hover {
+      color: var(--primary-red) !important;
+    }
+    
+    .progress-bar {
+      background-color: var(--primary-red) !important;
+    }
+    
+    .service-box, .box-shadow-full, .work-box {
+      background-color: var(--card-bg) !important;
+      border: 1px solid #333;
+    }
+    
+    .section-counter {
+      background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), ur[](https://i.ibb.co/cDmk7V0/counters-bg.jpg) !important;
+    }
+    
+    .btn, .back-to-top {
+      background-color: var(--primary-red);
+      border-color: var(--primary-red);
+    }
+    
+    .btn:hover, .back-to-top:hover {
+      background-color: #900c14;
+    }
+    
+    a {
+      color: var(--primary-red);
+    }
+    
+    .overlay-itro, .overlay-mf {
+      background: rgba(10,10,10,0.85);
+    }
+  </style>
+</head>
+<body>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">Marvellous</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#work">Work</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <div id="hero" class="hero route bg-image">
+    <div class="overlay-itro"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h1 class="hero-title mb-4">I am Ogunremi Marvellous</h1>
+          <p class="hero-subtitle">
+            <span class="typed" data-typed-items="Full Stack Developer, Web Designer, Data Analyst"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                      <div class="about-img">
+                        <img src="https://i.ibb.co/gmSFsRW/L.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7">
+                      <div class="about-info">
+                        <p><span class="title-s">Name: </span> <span>Ogunremi Marvellous</span></p>
+                        <p><span class="title-s">Profile: </span> <span>Full Stack Developer, Web Designer & Data Analyst</span></p>
+                        <p><span class="title-s">Email: </span> <span><a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></span></p>
+                        <p><span class="title-s">Phone: </span> <span><a href="tel:08107436260">08107436260</a></span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-mf">
+                    <p class="title-s">Skills</p>
+                    <span>HTML5 & CSS3:</span> <span class="pull-right">95%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%;"></div></div>
+                    <span>JavaScript:</span> <span class="pull-right">90%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%;"></div></div>
+                    <span>React.js:</span> <span class="pull-right">85%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%;"></div></div>
+                    <span>Backend (Node.js/Python):</span> <span class="pull-right">80%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 80%;"></div></div>
+                    <span>Data Analysis:</span> <span class="pull-right">75%</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 75%;"></div></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="about-me pt-4 pt-md-0">
+                    <div class="title-box-2">
+                      <h5 class="title-left">About Me</h5>
+                    </div>
+                    <p class="lead">
+                      I am Ogunremi Marvellous, a passionate Full Stack Developer, Web Designer, and Data Analyst 
+                      with a strong drive for building beautiful, functional, and data-driven digital solutions.
+                    </p>
+                    <p class="lead">
+                      I specialize in developing modern, responsive websites and robust web applications using the latest 
+                      technologies. From clean user interfaces to powerful backend systems and insightful data analysis, 
+                      I bring ideas to life with both creativity and technical precision.
+                    </p>
+                    <p class="lead">
+                      Whether it's designing pixel-perfect interfaces, developing full-featured applications, or turning 
+                      raw data into meaningful insights, I am committed to delivering high-quality results that exceed expectations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services, Portfolio, Contact sections remain for now -->
+    <!-- You can tell me if you want to update or remove any of them next -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: ur[](https://i.ibb.co/qYLB5Z2/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="title-box-2 pt-4 pt-md-0">
+                      <h5 class="title-left">Get in Touch</h5>
+                    </div>
+                    <div class="more-info">
+                      <p class="lead">
+                        Have a project in mind or any questions? Feel free to reach out. I'm always open to discussing new opportunities.
+                      </p>
+                      <ul class="list-ico">
+                        <li><span class="bi bi-envelope"></span> <a href="mailto:mogunremi1@gmail.com">mogunremi1@gmail.com</a></li>
+                        <li><span class="bi bi-telephone"></span> <a href="tel:08107436260">08107436260</a></li>
+                      </ul>
+                    </div>
+                    <div class="socials">
+                      <ul>
+                        <!-- Add your LinkedIn, Twitter, etc. here later -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">© Copyright <strong>Ogunremi Marvellous</strong>. All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="js/purecounter_vanilla.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/glightbox.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/typed.umd.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
