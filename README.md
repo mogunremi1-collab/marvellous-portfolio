@@ -1,6 +1,6 @@
 # Hi, I'm Marvellous 👋
 
-**Frontend Developer | Web Designer | Data Analyst**
+**FullStack Developer | Web Designer | Data Analyst**
 
 Crafting beautiful, responsive web experiences with clean code and turning data into insightful stories.
 
