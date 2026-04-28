@@ -228,65 +228,101 @@
 
     /* ===== PORTFOLIO ===== */
     .portfolio-mf { background: var(--bg-dark); }
-    .portfolio-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px; margin-top: 40px;
-    }
     
-    /* Portfolio Item Styling */
+    /* Portfolio Grid - Bootstrap Compatible */
+    .portfolio-mf .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 40px -15px 0;
+    }
+    .portfolio-mf .row > * {
+      padding: 0 15px;
+      margin-bottom: 30px;
+    }
+
+    /* Portfolio Item Card */
     .portfolio-item {
-      background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: 12px; overflow: hidden; transition: all 0.3s ease;
-      height: 100%; display: flex; flex-direction: column;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
     .portfolio-item:hover {
-      border-color: var(--primary-color); transform: translateY(-5px);
+      border-color: var(--primary-color);
+      transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(220,38,38,0.2);
     }
     .portfolio-img {
-      height: 200px; background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--primary-color); font-size: 4rem;
+      height: 200px;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 4rem;
       border-bottom: 1px solid var(--border-color);
     }
-    .portfolio-info { padding: 25px; flex: 1; display: flex; flex-direction: column; }
+    .portfolio-info {
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
     .portfolio-info h4 {
-      color: var(--text-primary); font-size: 1.25rem;
-      font-weight: 700; margin-bottom: 12px;
+      color: var(--text-primary);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
     .portfolio-info > p {
-      color: var(--text-secondary); font-size: 0.95rem;
-      line-height: 1.6; margin-bottom: 15px; flex: 1;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      flex: 1;
     }
     .portfolio-meta {
-      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
     }
     .tech-tag {
-      background: rgba(220,38,38,0.1); color: var(--primary-color);
-      padding: 4px 12px; border-radius: 20px; font-size: 0.75rem;
-      font-weight: 600; border: 1px solid rgba(220,38,38,0.2);
+      background: rgba(220,38,38,0.1);
+      color: var(--primary-color);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid rgba(220,38,38,0.2);
     }
-    .portfolio-links { display: flex; gap: 10px; }
+    .portfolio-links {
+      display: flex;
+      gap: 10px;
+    }
     .btn-outline-sm {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: transparent; border: 2px solid var(--primary-color);
-      color: var(--primary-color); padding: 8px 16px; border-radius: 6px;
-      text-decoration: none; font-size: 0.85rem; font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
       transition: all 0.3s ease;
     }
     .btn-outline-sm:hover {
-      background: var(--primary-color); color: white; transform: translateY(-2px);
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
     }
-    
-    .portfolio-placeholder {
-      text-align: center; padding: 60px 20px;
-      background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: 8px;
-    }
-    .portfolio-placeholder i {
-      font-size: 4rem; color: var(--primary-color); margin-bottom: 20px;
-    }
-    .portfolio-placeholder .lead { margin-bottom: 15px; }
 
     /* ===== CONTACT ===== */
     .contact-mf { background: var(--bg-dark); }
@@ -382,7 +418,8 @@
       .hero-title { font-size: 2rem; }
       .hero-subtitle { font-size: 1.2rem; }
       .box-shadow-full { padding: 25px; }
-      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-mf .row { margin: 40px -10px 0; }
+      .portfolio-mf .row > * { padding: 0 10px; }
       section { padding: 60px 0; }
     }
   </style>
@@ -554,7 +591,7 @@
       </div>
     </div>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section - FIXED -->
     <section id="work" class="portfolio-mf">
       <div class="container">
         <div class="title-box text-center">
@@ -563,9 +600,11 @@
           <div class="line-mf"></div>
         </div>
         
-        <div class="portfolio-grid">
+        <!-- Portfolio Grid using Bootstrap row/col -->
+        <div class="row">
+          
           <!-- Portfolio Item: Expense Tracker Web -->
-          <div class="col-md-4">
+          <div class="col-md-4 mb-4">
             <div class="portfolio-item">
               <div class="portfolio-img">
                 <i class="bi bi-wallet2"></i>
@@ -587,6 +626,7 @@
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
@@ -692,23 +732,43 @@
     });
   </script>
   
-  <!-- External Scripts -->
-  <script src="js/purecounter_vanilla.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/glightbox.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/typed.umd.js"></script>
-  <script src="js/main.js"></script>
-  
-  <!-- Typed.js Initialization -->
+  <!-- Typed.js Initialization (inline since external may not load) -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      if (typeof Typed !== 'undefined') {
-        new Typed('.typed', {
-          strings: ['Full Stack Developer', 'Web Designer', 'Data Analyst'],
-          typeSpeed: 50, backSpeed: 30, backDelay: 2000,
-          loop: true, showCursor: true, cursorChar: '|'
-        });
+      // Simple typed effect fallback if library not available
+      const typedEl = document.querySelector('.typed');
+      if (typedEl) {
+        const strings = ['Full Stack Developer', 'Web Designer', 'Data Analyst'];
+        let i = 0, j = 0, isDeleting = false, current = '';
+        
+        function type() {
+          const currentString = strings[i];
+          
+          if (isDeleting) {
+            current = currentString.substring(0, j - 1);
+            j--;
+          } else {
+            current = currentString.substring(0, j + 1);
+            j++;
+          }
+          
+          typedEl.textContent = current;
+          
+          let speed = isDeleting ? 50 : 100;
+          
+          if (!isDeleting && j === currentString.length) {
+            speed = 2000;
+            isDeleting = true;
+          } else if (isDeleting && j === 0) {
+            isDeleting = false;
+            i = (i + 1) % strings.length;
+            speed = 500;
+          }
+          
+          setTimeout(type, speed);
+        }
+        
+        setTimeout(type, 500);
       }
     });
   </script>
