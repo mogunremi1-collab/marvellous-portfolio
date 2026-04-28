@@ -226,10 +226,9 @@
       text-transform: uppercase; letter-spacing: 1px;
     }
 
-    /* ===== PORTFOLIO ===== */
+    /* ===== PORTFOLIO - COMPACT SIZE ===== */
     .portfolio-mf { background: var(--bg-dark); }
     
-    /* Portfolio Grid - Bootstrap Compatible */
     .portfolio-mf .row {
       display: flex;
       flex-wrap: wrap;
@@ -240,7 +239,6 @@
       margin-bottom: 30px;
     }
 
-    /* Portfolio Item Card */
     .portfolio-item {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -257,46 +255,46 @@
       box-shadow: 0 10px 30px rgba(220,38,38,0.2);
     }
     .portfolio-img {
-      height: 200px;
+      height: 120px;
       background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--primary-color);
-      font-size: 4rem;
+      font-size: 2.5rem;
       border-bottom: 1px solid var(--border-color);
     }
     .portfolio-info {
-      padding: 25px;
+      padding: 20px;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
     .portfolio-info h4 {
       color: var(--text-primary);
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .portfolio-info > p {
       color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 15px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
       flex: 1;
     }
     .portfolio-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
+      gap: 6px;
+      margin-bottom: 15px;
     }
     .tech-tag {
       background: rgba(220,38,38,0.1);
       color: var(--primary-color);
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: 20px;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
       border: 1px solid rgba(220,38,38,0.2);
     }
@@ -311,10 +309,10 @@
       background: transparent;
       border: 2px solid var(--primary-color);
       color: var(--primary-color);
-      padding: 8px 16px;
+      padding: 6px 14px;
       border-radius: 6px;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       transition: all 0.3s ease;
     }
@@ -591,7 +589,7 @@
       </div>
     </div>
 
-    <!-- Portfolio Section - FIXED -->
+    <!-- Portfolio Section -->
     <section id="work" class="portfolio-mf">
       <div class="container">
         <div class="title-box text-center">
@@ -600,9 +598,7 @@
           <div class="line-mf"></div>
         </div>
         
-        <!-- Portfolio Grid using Bootstrap row/col -->
         <div class="row">
-          
           <!-- Portfolio Item: Expense Tracker Web -->
           <div class="col-md-4 mb-4">
             <div class="portfolio-item">
@@ -626,7 +622,6 @@
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
@@ -732,10 +727,9 @@
     });
   </script>
   
-  <!-- Typed.js Initialization (inline since external may not load) -->
+  <!-- Typed.js Initialization -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Simple typed effect fallback if library not available
       const typedEl = document.querySelector('.typed');
       if (typedEl) {
         const strings = ['Full Stack Developer', 'Web Designer', 'Data Analyst'];
